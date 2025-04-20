@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs4ur4q7xoxmn"]
+
+[ext_resource type="Script" uid="uid://cvqhdhl7ceorg" path="res://victory_screen.gd" id="1_yvem7"]
+[ext_resource type="AudioStream" uid="uid://bnv76nm5171dn" path="res://Audio/SoundEffect/Victory.wav" id="2_44yii"]
+[ext_resource type="PackedScene" uid="uid://b7c7gsdx2rkjm" path="res://Utility/basic_button.tscn" id="3_earqp"]
+
+[node name="VictoryScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_yvem7")
+
+[node name="lblResult" type="Label" parent="."]
+offset_left = 285.0
+offset_top = 132.0
+offset_right = 353.0
+offset_bottom = 155.0
+text = "You Win!"
+
+[node name="Play Again" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -15.5
+offset_right = 44.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play Again"
+
+[node name="Victory Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_44yii")
+
+[node name="btn_exit" parent="." instance=ExtResource("3_earqp")]
+offset_left = 276.0
+offset_top = 202.0
+offset_right = 363.0
+offset_bottom = 232.0
+text = "Exit"

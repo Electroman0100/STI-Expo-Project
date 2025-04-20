@@ -60,9 +60,9 @@ collision_mask = 5
 motion_mode = 1
 script = ExtResource("1_r5pfe")
 movement_speed = 40.0
-hp = 300
+hp = 500
 knockback_recovery = 20.0
-experience = 100
+experience = 25
 enemy_damage = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -95,6 +95,8 @@ shape = SubResource("RectangleShape2D_ucec4")
 [node name="snd_hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_h3y3s")
 volume_db = -20.0
+
+[node name="HideTimer" type="Timer" parent="."]
 
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 

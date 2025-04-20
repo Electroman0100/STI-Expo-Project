@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://btf7clk4jja87"]
 
-[ext_resource type="Script" uid="uid://ys7id50516jm" path="res://Enemy/enemy.gd" id="1_friak"]
+[ext_resource type="Script" uid="uid://d3njeol2s5pss" path="res://Enemy/boss_enemy.gd" id="1_x8knb"]
 [ext_resource type="Texture2D" uid="uid://ce0hue7fwpa3a" path="res://Textures/Enemy/giant_amoeba_new.png" id="2_f58yx"]
 [ext_resource type="PackedScene" uid="uid://xy3cvpwdy828" path="res://Utility/hurt_box.tscn" id="3_otm2x"]
 [ext_resource type="PackedScene" uid="uid://uhr6mtuisqm1" path="res://Utility/hit_box.tscn" id="4_vpjbj"]
@@ -58,11 +58,11 @@ size = Vector2(97, 101)
 collision_layer = 5
 collision_mask = 5
 motion_mode = 1
-script = ExtResource("1_friak")
+script = ExtResource("1_x8knb")
 hp = 5000
-knockback_recovery = 99999.0
-experience = 100
-enemy_damage = 20
+knockback_recovery = 9999.0
+enemy_damage = 9999
+is_boss = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(5, 5)
@@ -70,7 +70,6 @@ texture = ExtResource("2_f58yx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_24u87")
-disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -95,6 +94,8 @@ shape = SubResource("RectangleShape2D_ucec4")
 [node name="snd_hit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_867w5")
 volume_db = -20.0
+
+[node name="HideTimer" type="Timer" parent="."]
 
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 

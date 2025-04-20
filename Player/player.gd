@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 
+
 var movement_speed = 100
 var hp = 80
 var maxhp = 80
@@ -83,7 +84,7 @@ func _ready():
 	set_expbar(experience, calculate_experiencecap())
 	_on_hurt_box_hurt(0,0,0)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	movement()
 
 func movement():
@@ -364,8 +365,8 @@ func death():
 	tween.tween_property(deathPanel,"position",Vector2(220,50),3.0).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
 	tween.play()
 	if time >= 300:
-		lblResult.text = "You Win"
-		sndVictory.play()
+		lblResult.text = "You Lose"
+		sndLose.play()
 	else:
 		lblResult.text = "You Lose"
 		sndLose.play()

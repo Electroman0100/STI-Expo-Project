@@ -6,7 +6,7 @@ extends Node2D
 
 @export var time = 1
 
-var enemy_cap = 500
+var enemy_cap = 1000000
 var enemies_to_spawn = []
 
 signal changetime(time)

@@ -96,6 +96,8 @@ shape = SubResource("RectangleShape2D_ucec4")
 stream = ExtResource("5_f6kha")
 volume_db = -20.0
 
+[node name="HideTimer" type="Timer" parent="."]
+
 [connection signal="hurt" from="HurtBox" to="." method="_on_hurt_box_hurt"]
 
 [editable path="HurtBox"]
